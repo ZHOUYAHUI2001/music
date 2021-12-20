@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg">
+
+
+    <RelativeLayout
+        android:id="@+id/local_music_bottomlayout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:background="#000000"><!--颜色#33eeeeee中的33可以实现半透明效果-->
+        <ImageView
+            android:id="@+id/phonto"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#9933fa" />
+
+        <!--ImageView
+            android:id="@+id/local_music_bottom_iv_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@mipmap/a1"
+            android:src="@mipmap/icon_song" /-->
+
+        <TextView
+            android:id="@+id/local_music_bottom_tv_song"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="歌曲名"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/local_music_bottom_tv_singer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/local_music_bottom_tv_song"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:text="歌手名称"
+            android:textColor="#ffffff"
+            android:textSize="12sp" />
+
+        <SeekBar
+            android:id="@+id/seek_bar"
+            android:layout_width="134dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/local_music_bottom_tv_singer"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="6dp"
+            android:maxHeight="1dp"
+            android:progressBackgroundTint="#ffffff" />
+
+
+        <TextView
+            android:id="@+id/music_length"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/seek_bar"
+            android:layout_marginLeft="95dp"
+            android:layout_marginTop="2dp"
+            android:text="00:00"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:id="@+id/music_cur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/seek_bar"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="2dp"
+            android:text="00:00"
+            android:textColor="#ffffff" />
+
+
+        <ImageView
+            android:id="@+id/local_music_bottom_iv_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/next1" />
+
+        <ImageView
+            android:id="@+id/local_music_bottom_iv_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@id/local_music_bottom_iv_next"
+            android:src="@drawable/play" />
+
+        <ImageView
+            android:id="@+id/local_music_bottom_iv_last"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@id/local_music_bottom_iv_play"
+            android:src="@drawable/last1" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_above="@id/local_music_bottomlayout"
+        android:layout_weight="1"
+        >
+
+        <!--ImageView
+            android:id="@+id/music_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/download1" /-->
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/local_music_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="6">
+
+        </androidx.recyclerview.widget.RecyclerView>
+        <RelativeLayout
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:background="#66000000"
+
+            >
+
+            <ImageView
+                android:id="@+id/search_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/download1" />
+
+            <EditText
+                android:id="@+id/search_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/search_submit"
+                android:background="#99ffffff"
+                android:hint="输入下载歌曲"
+                android:padding="5dp"
+                android:textColor="#000000" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>
